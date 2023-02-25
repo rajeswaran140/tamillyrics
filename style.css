@@ -40,7 +40,10 @@ nav .circle {
 }
 
 .song-img {
+  margin: 1% auto;
   width: 150px;
+  padding: 5px;
+  padding: px;
   height: 150px;
   border-radius: 50%;
   border: 7px solid rgba(63, 92, 171, 0.261);
@@ -48,6 +51,16 @@ nav .circle {
   object-fit: cover;
   display: block;
   justify-content: center;
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .music-player h1 {
