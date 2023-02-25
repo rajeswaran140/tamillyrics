@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tamil Lyrics</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="image/favicon.png">
     <script
       src="https://kit.fontawesome.com/a0e6909d89.js"
       crossorigin="anonymous"
@@ -71,13 +72,12 @@ if (song.play()) {
   }, 500);
 }
 
-progress.onchange = function () {
+progress.oninput = function () {
   song.play();
   song.currentTime = progress.value;
   ctrlIcon.classList.add("fa-pause");
   ctrlIcon.classList.remove("fa-play");
 };
-
     </script>
   </body>
 </html>
