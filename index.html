@@ -1,84 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tamil Lyrics</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="image/favicon.png">
-    <script
-      src="https://kit.fontawesome.com/a0e6909d89.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="music-player">
-        <nav>
-          <div class="circle">
-            <i class="fa-solid fa-angle-left"></i>
-          </div>
-          <div class="circle">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-        </nav>
-        <img src="image/Vaasam veesum100.jpg" class="song-img" />
-        <h1><strong>"வாசம் வீசும் பூங்காற்றே"</strong></h1>
-        <br>
-        <p>Music Composer: <b>Kapileshwer</b></p>
-        <br>
-         <p>Lyrics writer: <b>Rajeswaran</b></p>
-         <br>
-        <p>Vijay TV's Super Singers: <b>Siyad & Dhanyasri</b></p>
-
-
-
-        <audio id="song">
-          <source src="audio/Vaasam1.mp3" type="audio/mpeg" />
-        </audio>
-        <input type="range" value="0" id="progress" />
-        <div class="controls">
-          <div><i class="fa-solid fa-backward"></i></div>
-          <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></i></div>
-          <div><i class="fa-solid fa-forward"></i></div>
-        </div>
-      </div>
-    </div>
-    <script>
-      let progress = document.getElementById("progress");
-let song = document.getElementById("song");
-let ctrlIcon = document.getElementById("ctrlIcon");
-
-song.onloadedmetadata = function () {
-  progress.max = song.duration;
-  progress.value = song.currentTime;
-};
-
-function playPause() {
-  if (ctrlIcon.classList.contains("fa-pause")) {
-    song.pause();
-    ctrlIcon.classList.remove("fa-pause");
-    ctrlIcon.classList.add("fa-play");
-  } else {
-    song.play();
-    ctrlIcon.classList.add("fa-pause");
-    ctrlIcon.classList.remove("fa-play");
-  }
-}
-
-if (song.play()) {
-  setInterval(() => {
-    progress.value = song.currentTime;
-  }, 500);
-}
-
-progress.oninput = function () {
-  song.play();
-  song.currentTime = progress.value;
-  ctrlIcon.classList.add("fa-pause");
-  ctrlIcon.classList.remove("fa-play");
-};
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>New Music</title>
+		<link rel="stylesheet" href="new.css" />
+	</head>
+	<body>
+		<div class="music-player-enhanced">
+			<nav>
+				<div class="circle">
+					<i class="fa-solid fa-angle-left"></i>
+				</div>
+				<div class="circle">
+					<i class="fa-solid fa-bars"></i>
+				</div>
+			</nav>
+			<div class="song-thumbnail">
+				<img
+					src="https://rajeswaran.co/wp-content/uploads/2024/03/Vaasam-veesum100.jpg"
+					class="song-img"
+					alt="Song Thumbnail"
+				/>
+			</div>
+			<div class="song-details">
+				<h1
+					style="
+						color: #fff;
+						font-size: 25px;
+						line-height: 1.5;
+						margin-bottom: 15px;
+					"
+				>
+					"வாசம் வீசும் பூங்காற்றே"
+				</h1>
+				<p>Music Composer: <strong>Kapileshwer.</strong></p>
+				<p>Lyrics Writer: <strong>Rajeswaran.</strong></p>
+				<p style="margin-bottom: 28px; line-height: 1.6">
+					Vijay TV's Super Singers: <strong>Siyad & Dhanyasri.</strong>
+				</p>
+			</div>
+			<div class="audio-wrapper">
+				<audio id="song" controls>
+					<source
+						src="https://rajeswaran.co/wp-content/uploads/2024/03/Vaasam1.mp3"
+						type="audio/mpeg"
+					/>
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+			<div class="audio-controls">
+				<button onclick="playPause()">
+					<i class="fa-solid fa-play" id="playPauseIcon"></i>
+				</button>
+			</div>
+			<div class="equalizer stopped">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+		</div>
+		<script src="new.js"></script>
+	</body>
 </html>

@@ -1,0 +1,185 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.music-player-enhanced {
+	background: #222;
+	width: 100%;
+	max-width: 400px;
+	padding: 20px;
+	border-radius: 2px 28px;
+	box-shadow: 0 4px 6px rgba(216, 216, 216, 0.397);
+	margin: 20px auto;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.song-details {
+	color: #fff;
+}
+
+.song-thumbnail {
+	margin: 20px auto;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	animation:
+		rotateImage 20s linear infinite,
+		moveSideWays 10s ease-in-out infinite alternate;
+}
+
+.song-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	animation: zoomInOut 10s infinite alternate ease-in-out;
+}
+
+@keyframes rotateImage {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes zoomInOut {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+}
+
+@keyframes moveSideWays {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-10px);
+	}
+}
+
+.audio-controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.audio-controls button {
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 2rem;
+}
+
+#volumeControl {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100px;
+	height: 8px;
+	background: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#volumeControl::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #000;
+}
+
+#volumeControl::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #000;
+}
+
+.equalizer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 50px;
+	margin-top: 20px;
+}
+
+.equalizer.stopped .bar {
+	animation: none;
+}
+
+.bar {
+	width: 5px;
+	height: 20px;
+	background: #fff;
+	margin: 0 2px;
+	animation: equalize 1s infinite ease-in-out;
+}
+
+@keyframes equalize {
+	0%,
+	100% {
+		height: 20px;
+	}
+	50% {
+		height: 50px;
+	}
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+	.music-player-enhanced {
+		padding: 10px;
+		max-width: 95%;
+	}
+
+	.song-thumbnail {
+		width: 150px;
+		height: 150px;
+	}
+
+	.song-details h1,
+	.song-details p {
+		font-size: 16px;
+	}
+
+	.audio-controls button {
+		font-size: 1.5rem;
+	}
+
+	.equalizer {
+		margin-top: 15px;
+	}
+
+	.equalizer .bar {
+		width: 3px; /* Smaller bars on mobile */
+	}
+
+	.audio-controls {
+		gap: 5px; /* Reduce space between controls */
+	}
+
+	#volumeControl {
+		width: 80px; /* Adjust volume control width */
+	}
+}
