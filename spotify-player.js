@@ -355,14 +355,31 @@ class MusicPlayer {
 	}
 
 	generateColorPool() {
-		const letters = '0123456789ABCDEF';
-		for (let i = 0; i < 20; i++) {
-			let color = '#';
-			for (let j = 0; j < 6; j++) {
-				color += letters[Math.floor(Math.random() * 16)];
-			}
-			this.colorPool.push(color);
-		}
+		// Generate only green shades (Spotify green theme)
+		// Base Spotify green: #1db954
+		const greenShades = [
+			'#1db954', // Spotify green
+			'#1ed760', // Lighter green
+			'#1aa34a', // Darker green
+			'#17a047', // Medium dark green
+			'#1fdf64', // Bright green
+			'#169c46', // Forest green
+			'#14833b', // Deep green
+			'#1cd85e', // Vivid green
+			'#18b04c', // Mid green
+			'#1ec457', // Light mid green
+			'#15923f', // Dark mid green
+			'#1be75a', // Electric green
+			'#13782f', // Dark forest green
+			'#20f068', // Neon green
+			'#12652a', // Very dark green
+			'#1ccf5d', // Lime green
+			'#1a8d42', // Olive green
+			'#1db456', // Primary green
+			'#16a044', // Sea green
+			'#1fc960'  // Spring green
+		];
+		this.colorPool = greenShades;
 	}
 
 	getRandomColor() {
