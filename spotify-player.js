@@ -21,28 +21,8 @@ const songLibrary = [
 		duration: 240, // seconds (will be updated from actual file)
 		image: "/image/Vaasam veesum100.jpg",
 		audio: "/audio/Vaasam1.mp3"
-	},
-	// Add more songs here - for demo, we'll repeat the same song with different metadata
-	{
-		id: 2,
-		title: "காதல் கவிதை",
-		artist: "Siyad & Dhanyasri",
-		composer: "Kapileshwer",
-		lyricist: "Rajeswaran",
-		duration: 220,
-		image: "/image/Vaasam veesum100.jpg",
-		audio: "/audio/Vaasam1.mp3" // Using same audio for demo
-	},
-	{
-		id: 3,
-		title: "இசை மழை",
-		artist: "Siyad & Dhanyasri",
-		composer: "Kapileshwer",
-		lyricist: "Rajeswaran",
-		duration: 200,
-		image: "/image/Vaasam veesum100.jpg",
-		audio: "/audio/Vaasam1.mp3"
 	}
+	// Add more songs here as needed
 ];
 
 // Player State
@@ -155,8 +135,17 @@ class MusicPlayer {
 
 		// Update main UI
 		this.elements.songTitle.textContent = song.title;
-		this.elements.songArtist.textContent = `${song.artist} • ${song.lyricist}`;
+		this.elements.songArtist.textContent = `Vijay TV's Super Singers: ${song.artist}`;
 		this.elements.songImage.src = song.image;
+
+		// Update credits if element exists
+		const creditsDiv = document.querySelector('.song-credits');
+		if (creditsDiv) {
+			creditsDiv.innerHTML = `
+				<p><strong>Music Composer:</strong> ${song.composer}</p>
+				<p><strong>Lyrics Writer:</strong> ${song.lyricist}</p>
+			`;
+		}
 
 		// Update player bar UI
 		this.elements.playerThumb.src = song.image;

@@ -177,6 +177,24 @@ body {
 	color: var(--text-secondary);
 }
 
+.song-credits {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid var(--border-color);
+}
+
+.song-credits p {
+	font-size: 14px;
+	color: var(--text-secondary);
+	margin: 8px 0;
+	line-height: 1.6;
+}
+
+.song-credits strong {
+	color: var(--text-primary);
+	font-weight: 600;
+}
+
 /* Equalizer */
 .equalizer {
 	position: absolute;

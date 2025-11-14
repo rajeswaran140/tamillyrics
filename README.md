@@ -1,38 +1,39 @@
 # Tamil Lyrics Music Player 🎵
 
-A high-performance, modern music player for Tamil lyrics with beautiful animations and optimized rendering. **Now available in two versions!**
+A high-performance, Spotify-inspired music player for Tamil lyrics with beautiful animations, optimized rendering, and professional features.
 
-## 🎨 Two Player Versions
+## 🎵 **Main Player** (`index.html`)
 
-### 1. **Simple Player** (`index.html`)
-A clean, minimalist music player perfect for single-track showcase
+The main player features a professional Spotify-style interface with:
+- **Full playlist management** with track listing
+- **Advanced playback controls** (play, pause, previous, next)
+- **Shuffle & Repeat modes** for flexible listening
+- **Live search** to filter songs
+- **Dark theme** with professional UI
+- **State persistence** - remembers your preferences
+- **Mobile responsive** design
 
-### 2. **Spotify-Style Player** (`spotify.html`) ⭐ **NEW!**
-A full-featured music player inspired by Spotify with playlist management, shuffle, repeat, and search!
+### Alternative: Simple Player (`simple.html`)
+A minimalist single-song player is also available for basic playback needs.
 
-📖 **[Read Full Spotify Player Documentation →](SPOTIFY_README.md)**
+📖 **[Read Full Documentation →](SPOTIFY_README.md)**
 
-## ✨ Features Comparison
+## ✨ Features
 
-### Simple Player (`index.html`)
-- 🎵 Clean, responsive music player interface
-- 🎨 Animated rotating album art
-- 📊 Dynamic equalizer visualization with random colors
-- 🔊 Volume control
-- ⏯️ Play/pause controls
-- ⏱️ Progress bar with seek functionality
-- 📱 Mobile responsive design
-- ⚡ Optimized for performance (60fps animations)
-
-### Spotify Player (`spotify.html`) - All above features PLUS:
-- 📚 **Multi-song playlist** with track listing
-- ⏮️ ⏭️ **Previous/Next** track navigation
-- 🔀 **Shuffle mode** with smart history
-- 🔁 **Repeat modes** (Off/All/One)
-- 🔍 **Live search** and filter
-- 💾 **State persistence** with LocalStorage
-- 🎨 **Professional UI** - Spotify-inspired dark theme
-- 📊 **Advanced controls** - Full playback management
+- 🎵 Professional Spotify-inspired interface
+- 🎨 Animated rotating album art with dynamic equalizer
+- 📚 Playlist management (expandable for multiple songs)
+- ⏮️ ⏯️ ⏭️ Full playback controls (previous, play/pause, next)
+- 🔀 Shuffle mode with intelligent playback history
+- 🔁 Three repeat modes (Off, Repeat All, Repeat One)
+- 🔍 Live search to filter songs by title, artist, or lyricist
+- 🎚️ Volume control with slider
+- ⏱️ Progress bar with seek functionality and time display
+- 💾 State persistence - remembers your position and preferences
+- 📱 Fully responsive design for all devices
+- ⚡ Optimized for 60fps performance
+- 🎨 Dark theme with Spotify green accents
+- 🖥️ Sidebar navigation with library access
 
 ## 🚀 Live Demo
 
@@ -54,34 +55,34 @@ This player has been heavily optimized for performance:
 
 ```
 tamillyrics/
-├── Simple Player
-│   ├── index.html          # Simple player page
-│   ├── audioPlayer.js      # Simple player logic
-│   └── style.css          # Simple player styles
+├── Main Player
+│   ├── index.html          # ⭐ Main Spotify-style player
+│   ├── spotify-player.js   # Player logic and state management
+│   └── spotify-style.css   # Spotify-themed dark styles
 │
-├── Spotify Player ⭐ NEW
-│   ├── spotify.html        # Spotify-style player page
-│   ├── spotify-player.js   # Advanced player logic
-│   └── spotify-style.css   # Spotify-themed styles
+├── Alternative Players
+│   ├── simple.html         # Minimalist single-song player
+│   ├── audioPlayer.js      # Simple player logic
+│   ├── style.css          # Simple player styles
+│   └── songs.html         # Alternative player variant
 │
 ├── Deployment
 │   ├── amplify.yml        # AWS Amplify build config
 │   ├── _redirects         # Amplify routing rules
 │   ├── DEPLOYMENT.md      # Deployment guide
-│   └── SPOTIFY_README.md  # Spotify player docs
+│   └── SPOTIFY_README.md  # Full documentation
 │
 ├── Assets
 │   ├── audio/
-│   │   └── Vaasam1.mp3   # Song file (13 MB)
+│   │   └── Vaasam1.mp3   # Audio file (13 MB)
 │   └── image/
-│       ├── Vaasam veesum100.jpg
+│       ├── Vaasam veesum100.jpg  # Album artwork
 │       ├── Rajeswaran Image1.jpg
 │       └── favicon.png
 │
-└── Other Files
-    ├── songs.html         # Alternative player
-    ├── new.md            # Development notes
-    └── README.md         # This file
+└── Documentation
+    ├── README.md          # This file
+    └── new.md            # Development notes
 ```
 
 ## 🛠️ Technologies Used
@@ -132,8 +133,8 @@ php -S localhost:8000
 ```
 
 3. Open in your browser:
-- **Simple Player**: `http://localhost:8000/index.html`
-- **Spotify Player**: `http://localhost:8000/spotify.html` ⭐
+- **Main Player**: `http://localhost:8000/index.html` ⭐
+- **Simple Player**: `http://localhost:8000/simple.html` (alternative)
 
 **Note**: Use a local server instead of opening HTML files directly for the best experience (avoids CORS issues with audio files).
 

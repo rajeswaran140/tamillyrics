@@ -1,78 +1,164 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>New Music</title>
-		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-	</head>
-	<body>
-		<div class="music-player-enhanced">
-			<nav>
-				<div class="circle">
-					<i class="fa-solid fa-angle-left"></i>
-				</div>
-				<div class="circle">
-					<i class="fa-solid fa-bars"></i>
-				</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Tamil Lyrics Music Player</title>
+	<link rel="stylesheet" href="spotify-style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<link rel="icon" href="/image/favicon.png" type="image/png" />
+</head>
+<body>
+	<div class="spotify-container">
+		<!-- Sidebar -->
+		<aside class="sidebar">
+			<div class="sidebar-header">
+				<h1><i class="fa-solid fa-music"></i> Tamil Lyrics</h1>
+			</div>
+
+			<nav class="sidebar-nav">
+				<a href="#" class="nav-item active">
+					<i class="fa-solid fa-house"></i>
+					<span>Home</span>
+				</a>
+				<a href="#" class="nav-item">
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<span>Search</span>
+				</a>
+				<a href="#" class="nav-item">
+					<i class="fa-solid fa-book"></i>
+					<span>Your Library</span>
+				</a>
 			</nav>
-			<div class="song-thumbnail">
-				<img
-					src="/image/Vaasam veesum100.jpg"
-					class="song-img"
-					alt="Song Thumbnail"
-				/>
+
+			<div class="sidebar-playlists">
+				<a href="#" class="nav-item">
+					<i class="fa-solid fa-plus"></i>
+					<span>Create Playlist</span>
+				</a>
+				<a href="#" class="nav-item">
+					<i class="fa-solid fa-heart"></i>
+					<span>Liked Songs</span>
+				</a>
 			</div>
-			<div class="song-details">
-				<h1
-					style="
-						color: #fff;
-						font-size: 20px;
-						line-height: 1.5;
-						margin-bottom: 15px;
-					"
-				>
-					"வாசம் வீசும் பூங்காற்றே"
-				</h1>
-				<p style="line-height: 1.8" ;>
-					Music Composer: <br /><strong>Kapileshwer.</strong>
-				</p>
-				<p style="line-height: 1.8">
-					Lyrics Writer:<br />
-					<strong>Rajeswaran.</strong>
-				</p>
-				<p style="margin-bottom: 28px; line-height: 1.8">
-					Vijay TV's Super Singers:<br />
-					<strong>Siyad & Dhanyasri.</strong>
-				</p>
+		</aside>
+
+		<!-- Main Content -->
+		<main class="main-content">
+			<!-- Header -->
+			<header class="main-header">
+				<div class="search-bar">
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<input
+						type="text"
+						id="searchInput"
+						placeholder="Search for songs, artists, or lyricists..."
+					/>
+				</div>
+			</header>
+
+			<!-- Now Playing Section -->
+			<section class="now-playing">
+				<div class="now-playing-image">
+					<img id="songImage" src="/image/Vaasam veesum100.jpg" alt="Album Art" />
+					<div class="equalizer">
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
+					</div>
+				</div>
+				<div class="now-playing-info">
+					<h2 id="songTitle">வாசம் வீசும் பூங்காற்றே</h2>
+					<p id="songArtist">Vijay TV's Super Singers: Siyad & Dhanyasri</p>
+					<div class="song-credits">
+						<p><strong>Music Composer:</strong> Kapileshwer</p>
+						<p><strong>Lyrics Writer:</strong> Rajeswaran</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Playlist Section -->
+			<section class="playlist-section">
+				<h2>Your Playlist</h2>
+				<div id="playlist" class="playlist"></div>
+			</section>
+		</main>
+	</div>
+
+	<!-- Player Controls (Bottom Bar) -->
+	<footer class="player-controls">
+		<div class="player-left">
+			<img id="playerThumb" src="/image/Vaasam veesum100.jpg" alt="Current Song" />
+			<div class="player-song-info">
+				<div class="player-song-title" id="playerSongTitle">வாசம் வீசும் பூங்காற்றே</div>
+				<div class="player-song-artist" id="playerSongArtist">Siyad & Dhanyasri</div>
 			</div>
-			<div class="audio-wrapper">
-				<audio id="song">
-					<source src="/audio/Vaasam1.mp3" type="audio/mpeg" />
-					Your browser does not support the audio element.
-				</audio>
-			</div>
-			<input type="range" id="progressBar" value="0" style="width: 90%; margin: 10px auto; display: block;" />
-			<div class="audio-controls">
-				<button onclick="playPause()">
-					<i class="fa-solid fa-play" id="playPauseIcon"></i>
+			<button class="btn-icon btn-like">
+				<i class="fa-regular fa-heart"></i>
+			</button>
+		</div>
+
+		<div class="player-center">
+			<div class="player-controls-buttons">
+				<button id="shuffleBtn" class="btn-icon" title="Shuffle">
+					<i class="fa-solid fa-shuffle"></i>
 				</button>
-				<input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5" />
+				<button id="prevBtn" class="btn-icon" title="Previous">
+					<i class="fa-solid fa-backward-step"></i>
+				</button>
+				<button id="playPauseBtn" class="btn-play" title="Play/Pause">
+					<i id="playPauseIcon" class="fa-solid fa-play"></i>
+				</button>
+				<button id="nextBtn" class="btn-icon" title="Next">
+					<i class="fa-solid fa-forward-step"></i>
+				</button>
+				<button id="repeatBtn" class="btn-icon" data-mode="off" title="Repeat">
+					<i class="fa-solid fa-repeat"></i>
+				</button>
 			</div>
-			<div class="equalizer stopped">
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
+			<div class="player-progress">
+				<span id="currentTime">0:00</span>
+				<input
+					type="range"
+					id="progressBar"
+					class="progress-bar"
+					value="0"
+					min="0"
+					max="100"
+				/>
+				<span id="totalTime">0:00</span>
 			</div>
 		</div>
-		<script src="audioPlayer.js"></script>
-	</body>
+
+		<div class="player-right">
+			<button class="btn-icon">
+				<i class="fa-solid fa-list"></i>
+			</button>
+			<button class="btn-icon">
+				<i class="fa-solid fa-volume-high"></i>
+			</button>
+			<input
+				type="range"
+				id="volumeControl"
+				class="volume-slider"
+				min="0"
+				max="1"
+				step="0.01"
+				value="0.5"
+			/>
+		</div>
+	</footer>
+
+	<!-- Hidden Audio Element -->
+	<audio id="song"></audio>
+
+	<script src="spotify-player.js"></script>
+</body>
 </html>
