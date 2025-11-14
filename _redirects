@@ -1,0 +1,3 @@
+# AWS Amplify redirect rules
+# Redirect all requests to index.html for SPA behavior
+/*    /index.html   200
