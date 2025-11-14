@@ -33,9 +33,9 @@ body {
 	overflow: hidden;
 	border-radius: 50%;
 	border: 5px solid #fff;
-	animation:
-		rotateImage 20s linear infinite,
-		moveSideWays 10s ease-in-out infinite alternate;
+	animation: rotateImage 20s linear infinite;
+	will-change: transform;
+	contain: layout style paint;
 }
 
 .song-img {
@@ -43,36 +43,29 @@ body {
 	height: 100%;
 	object-fit: cover;
 	animation: zoomInOut 10s infinite alternate ease-in-out;
+	will-change: transform;
 }
 
 @keyframes rotateImage {
 	0% {
-		transform: rotate(0deg);
+		transform: rotate3d(0, 0, 1, 0deg);
 	}
 	100% {
-		transform: rotate(360deg);
+		transform: rotate3d(0, 0, 1, 360deg);
 	}
 }
 
 @keyframes zoomInOut {
 	0%,
 	100% {
-		transform: scale(1);
+		transform: scale3d(1, 1, 1);
 	}
 	50% {
-		transform: scale(1.1);
+		transform: scale3d(1.1, 1.1, 1);
 	}
 }
 
-@keyframes moveSideWays {
-	0%,
-	100% {
-		transform: translateX(0);
-	}
-	50% {
-		transform: translateX(-10px);
-	}
-}
+/* Removed moveSideWays animation to reduce GPU usage */
 
 .audio-controls {
 	display: flex;
@@ -135,6 +128,8 @@ body {
 	background: #fff;
 	margin: 0 2px;
 	animation: equalize 1s infinite ease-in-out;
+	will-change: height;
+	contain: strict;
 }
 
 @keyframes equalize {
