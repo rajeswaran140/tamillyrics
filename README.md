@@ -1,9 +1,20 @@
 # Tamil Lyrics Music Player 🎵
 
-A high-performance, modern music player for Tamil lyrics with beautiful animations and optimized rendering.
+A high-performance, modern music player for Tamil lyrics with beautiful animations and optimized rendering. **Now available in two versions!**
 
-## ✨ Features
+## 🎨 Two Player Versions
 
+### 1. **Simple Player** (`index.html`)
+A clean, minimalist music player perfect for single-track showcase
+
+### 2. **Spotify-Style Player** (`spotify.html`) ⭐ **NEW!**
+A full-featured music player inspired by Spotify with playlist management, shuffle, repeat, and search!
+
+📖 **[Read Full Spotify Player Documentation →](SPOTIFY_README.md)**
+
+## ✨ Features Comparison
+
+### Simple Player (`index.html`)
 - 🎵 Clean, responsive music player interface
 - 🎨 Animated rotating album art
 - 📊 Dynamic equalizer visualization with random colors
@@ -12,6 +23,16 @@ A high-performance, modern music player for Tamil lyrics with beautiful animatio
 - ⏱️ Progress bar with seek functionality
 - 📱 Mobile responsive design
 - ⚡ Optimized for performance (60fps animations)
+
+### Spotify Player (`spotify.html`) - All above features PLUS:
+- 📚 **Multi-song playlist** with track listing
+- ⏮️ ⏭️ **Previous/Next** track navigation
+- 🔀 **Shuffle mode** with smart history
+- 🔁 **Repeat modes** (Off/All/One)
+- 🔍 **Live search** and filter
+- 💾 **State persistence** with LocalStorage
+- 🎨 **Professional UI** - Spotify-inspired dark theme
+- 📊 **Advanced controls** - Full playback management
 
 ## 🚀 Live Demo
 
@@ -33,18 +54,34 @@ This player has been heavily optimized for performance:
 
 ```
 tamillyrics/
-├── index.html              # Main player page
-├── audioPlayer.js          # Optimized player logic
-├── style.css              # Optimized styles
-├── songs.html             # Alternative player (remote assets)
-├── amplify.yml            # AWS Amplify build config
-├── _redirects             # Amplify routing rules
-├── audio/
-│   └── Vaasam1.mp3        # Song file (13 MB)
-└── image/
-    ├── Vaasam veesum100.jpg
-    ├── Rajeswaran Image1.jpg
-    └── favicon.png
+├── Simple Player
+│   ├── index.html          # Simple player page
+│   ├── audioPlayer.js      # Simple player logic
+│   └── style.css          # Simple player styles
+│
+├── Spotify Player ⭐ NEW
+│   ├── spotify.html        # Spotify-style player page
+│   ├── spotify-player.js   # Advanced player logic
+│   └── spotify-style.css   # Spotify-themed styles
+│
+├── Deployment
+│   ├── amplify.yml        # AWS Amplify build config
+│   ├── _redirects         # Amplify routing rules
+│   ├── DEPLOYMENT.md      # Deployment guide
+│   └── SPOTIFY_README.md  # Spotify player docs
+│
+├── Assets
+│   ├── audio/
+│   │   └── Vaasam1.mp3   # Song file (13 MB)
+│   └── image/
+│       ├── Vaasam veesum100.jpg
+│       ├── Rajeswaran Image1.jpg
+│       └── favicon.png
+│
+└── Other Files
+    ├── songs.html         # Alternative player
+    ├── new.md            # Development notes
+    └── README.md         # This file
 ```
 
 ## 🛠️ Technologies Used
@@ -82,7 +119,7 @@ git clone https://github.com/rajeswaran140/tamillyrics.git
 cd tamillyrics
 ```
 
-2. Open in browser:
+2. Start a local server:
 ```bash
 # Using Python
 python -m http.server 8000
@@ -90,10 +127,15 @@ python -m http.server 8000
 # Using Node.js
 npx http-server
 
-# Or simply open index.html in your browser
+# Using PHP
+php -S localhost:8000
 ```
 
-3. Navigate to `http://localhost:8000` in your browser
+3. Open in your browser:
+- **Simple Player**: `http://localhost:8000/index.html`
+- **Spotify Player**: `http://localhost:8000/spotify.html` ⭐
+
+**Note**: Use a local server instead of opening HTML files directly for the best experience (avoids CORS issues with audio files).
 
 ## 📊 Performance Metrics
 
