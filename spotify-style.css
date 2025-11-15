@@ -198,7 +198,7 @@ body {
 /* Equalizer - Enhanced Spotify Style */
 .equalizer {
 	position: absolute;
-	bottom: 20px;
+	top: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
@@ -215,6 +215,7 @@ body {
 		inset 0 1px 0 rgba(255, 255, 255, 0.1),
 		0 0 0 1px rgba(29, 185, 84, 0.2);
 	border: 1px solid rgba(29, 185, 84, 0.15);
+	z-index: 5;
 }
 
 .bar {
@@ -564,22 +565,25 @@ body {
 /* Copyright */
 .copyright {
 	position: absolute;
-	bottom: 4px;
+	bottom: 2px;
 	left: 0;
 	right: 0;
 	width: 100%;
 	text-align: center;
-	padding: 4px 0;
-	z-index: 10;
+	padding: 6px 0;
+	z-index: 100;
 	pointer-events: none;
+	background: linear-gradient(to top, rgba(24, 24, 24, 0.95), transparent);
 }
 
 .copyright p {
 	font-size: 11px;
-	color: var(--text-secondary);
+	color: #b3b3b3;
 	margin: 0;
-	opacity: 0.8;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	opacity: 1;
+	font-weight: 500;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+	letter-spacing: 0.3px;
 }
 
 /* Animations */
@@ -686,15 +690,20 @@ body {
 
 	.copyright {
 		position: absolute;
-		bottom: 8px;
+		bottom: 5px;
 		left: 0;
 		right: 0;
-		z-index: 20;
+		z-index: 100;
+		padding: 8px 0;
+		background: linear-gradient(to top, rgba(24, 24, 24, 0.98), rgba(24, 24, 24, 0.6), transparent);
 	}
 
 	.copyright p {
-		font-size: 10px;
-		opacity: 0.9;
+		font-size: 11px;
+		opacity: 1;
+		font-weight: 600;
+		color: #e0e0e0;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 	}
 
 	.equalizer {
@@ -702,7 +711,7 @@ body {
 		padding: 10px 18px;
 		gap: 4px;
 		border-radius: 25px;
-		bottom: 16px;
+		top: 16px;
 	}
 
 	.bar {
@@ -763,15 +772,20 @@ body {
 
 	.copyright {
 		position: absolute;
-		bottom: 6px;
+		bottom: 3px;
 		left: 0;
 		right: 0;
-		z-index: 20;
+		z-index: 100;
+		padding: 8px 0;
+		background: linear-gradient(to top, rgba(24, 24, 24, 1), rgba(24, 24, 24, 0.7), transparent);
 	}
 
 	.copyright p {
-		font-size: 9px;
-		opacity: 0.85;
+		font-size: 10px;
+		opacity: 1;
+		font-weight: 600;
+		color: #ffffff;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 	}
 
 	.playlist-item {
@@ -801,7 +815,7 @@ body {
 		padding: 8px 14px;
 		gap: 3px;
 		border-radius: 22px;
-		bottom: 14px;
+		top: 14px;
 	}
 
 	.bar {
